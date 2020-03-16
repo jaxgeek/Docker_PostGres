@@ -1,3 +1,5 @@
+## Getting started
+
 #1.- Create a yml file with the services you want to compose
 
 #1.a - Create a ".env" file which will supply the postgres environmental values
