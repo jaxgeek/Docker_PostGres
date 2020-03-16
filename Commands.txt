@@ -1,0 +1,23 @@
+#start container --name is container name 
+docker run -d -p 5432:5432 -e POSTGRES_USER=docker -e POSTGRES_PASSWORD=docker --name 5555 postgres
+2. docker run -p 6666:80 --name docker_pgadmin -e PGADMIN_DEFAULt_EMAIL='pgadmin' -e PGADMIN_DEFAULT_PASSWORD=pgadmin dpage/pgadmin4 
+
+
+docker run -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=postgres -d postgres
+
+#use docker file from running directory
+docker build -f DockerFile .
+
+#inspect IP address
+docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" docker_postgres
+
+docker run --name postgresql -itd --restart always --publish 5432:5432 -e POSTGRES_USER=docker -e POSTGRES_PASSWORD=docker postgres
+
+
+##Start restart container
+docker stop postgres1
+docker start postgres1
+
+##CLean up
+docker rm -f postgres2
+docker volume rm postgres-data
